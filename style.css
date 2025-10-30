@@ -1,0 +1,480 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #fff;
+    background-color: #1f2029;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #fff;
+  margin: 0;
+}
+
+.wrapper {
+  /* position: relative; */
+  width: 100%;
+  overflow: hidden;
+}
+
+.container{
+  position: relative;
+  width: 90%;
+  max-width: 850px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 100px 0;
+}
+
+.chair_text_about{
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+[type="radio"]:checked,          /* []: attribute selectors.   [type="radio] Selects all the elements
+                                 having 'type' attribute set to 'radio'  and add css to it.
+                                 visibility:hidden hides the selected items that are radio buttons
+                                 in our case*/
+[type="radio"]:not(:checked){
+    position:absolute;
+    visibility: hidden;
+}
+
+ .colour-btn + label:checked,          /* "+" is an adjacent sibling selector which is used to select element 
+                                       that is directly after another specific element.
+
+                                       In our case,we selected elements having class colour-btn,
+                                        then we selected all the label element that lies
+                                       exactly after elements having class colour-btn.
+                                       Then whether the buttons are checked or unchecked, we applied
+                                       some properties on it. */
+
+                                       /* We hided the radio buttons above using attribute selector. 
+                                       We have not added anything to the label tags of each button.
+                                       we simply give label height and width to make it look like a box.
+                                       We will later add background colour to each label box. */
+.colour-btn + label:not(:checked){
+  position: relative;
+  left:500px;
+  top:0;
+  height: 40px;
+  width: 40px;
+  border: 3px solid transparent;
+  color: #ffeba7;
+  margin-right: 10px;
+  box-shadow: 0 12px 35px 0 rgba(16, 39, 112, 0.25);
+  border-radius: 4px;
+  cursor: pointer; 
+  z-index: 10;
+}
+
+.colour-btn + label:hover {
+  transform: scale(1.1);                      
+  box-shadow:0 0 6px rgba(255, 235, 167, 0.3); 
+  transition: all 0.3s ease;                    
+}
+
+.colour-btn:checked + label {
+  border-color: #434343;
+  transform: scale(1.1);
+}
+
+#label-colour-1{
+    background-image: url("color1.jpg");
+}
+
+#label-colour-2{
+    background-image: url("color2.jpg");
+}
+
+#label-colour-3{
+    background-image: url("color3.jpg");
+}
+
+#label-colour-4{
+    background-image: url("color4.jpg");
+}
+
+#label-colour-5{
+    background-image: url("color5.jpg");
+}
+
+#label-colour-6{
+    background-image: url("color6.jpg");
+}
+
+.chair-image{
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 500px;
+  height: 410px;
+  display: inline-block;
+  z-index: 9;
+  transition: all 550ms linear;
+  transition-delay: 100ms;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  opacity: 0;
+}
+
+.info {
+  position: relative;
+  left: 0;
+  margin-left: 500px;
+  z-index: 10;
+  text-align: left;
+}
+
+@media (max-width: 840px) {
+ .chair-image {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 280px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    position: absolute;
+  }
+
+  .info {
+    position: relative;
+    top: 115px;
+    margin-left: 0;
+    margin-top: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+  h3 {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 0.8;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+  .colour-btn + label:not(:checked),
+  .colour-btn:checked + label {
+    position: relative;
+    left: 0;
+    top: 90px;
+    display: inline-block;
+    margin: 8px 6px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 130px; 
+  }
+
+  .btn button {
+    width: auto;
+    padding: 10px 30px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+}
+
+#chair1{
+  background-image: url(chair1.png);
+}
+
+#chair2{
+  background-image: url(chair2.png);
+}
+
+#chair3{
+  background-image: url(chair3.png);
+}
+
+#chair4{
+  background-image: url(chair4.png);
+}
+
+#chair5{
+  background-image: url(chair5.png);
+}
+
+#chair6{
+  background-image: url(chair6.png);
+}
+
+#colour-1:checked ~ #chair1{    /* '~' is also a sibling selector. Here we are saying, if the element
+                                having id as "colour-1" is checked, then select the element having
+                                class ".chair-1", and apply following properties to it(here, turn 
+                                opacity 1 and apply animation) */
+    opacity: 1;
+    animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+#colour-2:checked ~ #chair2{
+    opacity: 1;
+    animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+#colour-3:checked ~ #chair3{
+    opacity: 1;
+    animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+#colour-4:checked ~ #chair4{
+    opacity: 1;
+    animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+#colour-5:checked ~ #chair5{
+    opacity: 1;
+    animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+#colour-6:checked ~ #chair6{
+    opacity: 1; 
+    animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0) rotate(-1deg);
+  }
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0) rotate(2deg);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-3px, 0, 0) rotate(-3deg);
+  }
+  40%,
+  60% {
+    transform: translate3d(3px, 0, 0) rotate(3deg);
+  }
+}
+
+@media (max-width: 840px) {
+  .chair-image {
+    --base-transform: translateX(-50%);
+    transform: var(--base-transform);
+  }
+
+  @keyframes shake {
+    10%, 90% {
+      transform: var(--base-transform) translate3d(-1px, 0, 0) rotate(-1deg);
+    }
+    20%, 80% {
+      transform: var(--base-transform) translate3d(2px, 0, 0) rotate(2deg);
+    }
+    30%, 50%, 70% {
+      transform: var(--base-transform) translate3d(-3px, 0, 0) rotate(-3deg);
+    }
+    40%, 60% {
+      transform: var(--base-transform) translate3d(3px, 0, 0) rotate(3deg);
+    }
+  }
+}
+
+.bg-colour {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0;
+}
+
+#bg-1{
+  background-color: #e66767;
+}
+
+#bg-2{
+  background-color: #262626;
+}
+
+#bg-3{
+  background-color: #5f7991;
+}
+
+#bg-4{
+  background-color: #6789a7;
+}
+
+#bg-5{
+  background-color: #8c7f7c;
+}
+
+#bg-6{
+  background-color: rgba(128, 128, 128, 0);
+}
+
+
+
+#colour-1:checked ~ #bg-1{   
+  opacity: 1;
+}
+
+#colour-2:checked ~ #bg-2{
+    opacity: 1;
+}
+
+#colour-3:checked ~ #bg-3{
+    opacity: 1;
+}
+
+#colour-4:checked ~ #bg-4{
+    opacity: 1;
+}
+
+#colour-5:checked ~ #bg-5{
+    opacity: 1;
+}
+
+#colour-6:checked ~ #bg-6{
+    opacity: 1; 
+}
+
+#title {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 1.2;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-weight: 800;
+  font-size: 34px;
+  line-height: 1.2;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 1.2;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+h4 span {
+  text-decoration: line-through;
+  font-size: 20px;
+  opacity: 0.6;
+  padding-left: 15px;
+}
+
+h5 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.desc-btn:checked + label,
+.desc-btn:not(:checked) + label {
+  position: relative;
+  transition: all 200ms linear;
+  cursor: pointer;
+  color: #ffeba7;
+
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #fff;
+  margin-right: 25px;
+  opacity: 0.5;
+}
+
+.desc-btn:checked + label {
+  opacity: 1;
+}
+.desc-btn:not(:checked) + label:hover {
+  opacity: 0.8;
+}
+
+.chair-desc{
+  padding-top: 20px;
+  padding-bottom: 30px;
+  color: #fff;
+  transition: all 250ms linear;
+  transform: translateY(20px);
+  opacity: 0;
+  pointer-events: none;
+  /* overflow: hidden; */
+}
+
+#chair-desc2 {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+#desc-btn1:checked ~ #chair-desc1 {
+  opacity: 1;
+  transform: translateY(0);
+}
+#desc-btn2:checked ~ #chair-desc2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.details {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+}
+.details p span {
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+.btn button {
+  background-color: #ffeba7;       
+  color: #1f2029;                 
+  border: none;
+  border-radius: 8px;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(255, 235, 167, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn button:hover {
+  background-color: #ffd966;       
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 235, 167, 0.4);
+}
+
+

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Chair Project</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="info">
+                <p id="title">Modern Chair</p>
+
+                <h3>Telford Chairs</h3>
+
+                <h4>$254
+                    <span>$530</span>
+                </h4>
+
+                <div class="chair_text_about">
+                    <input type="radio" name="desc-btn" class="desc-btn" id="desc-btn1" checked>
+                    <label for="desc-btn1">Description</label>
+
+                    <input type="radio" name="desc-btn" class="desc-btn" id="desc-btn2">
+                    <label for="desc-btn2">Details</label>
+                    <!-- name of both radio buttons is same, so only 1 can be checked at a time. When when 
+                    is checked, other is unchecked automatically -->
+
+                    <div class="chair-desc" id="chair-desc1">
+                        <!--when we click on description button, this shows up -->
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus harum id
+                            mollitia, possimus voluptatum vitae dicta distinctio alias esse, laudantium
+                            sequi. Illo, sed repudiandae nemo aliquid temporibus alias quibusdam totam.
+                            Amet doloribus, vero voluptatum corrupti.
+                        </p>
+                    </div>
+
+                    <div class="chair-desc" id="chair-desc2"> <!--when we click on details button, this shows up -->
+                        <div class="details">
+                            <p>
+                                <span>80</span>
+                                cm
+                                <br>
+                                Length
+                            </p>
+                        </div>
+
+                        <div class="details">
+                            <p>
+                                <span>65</span>
+                                cm
+                                <br>
+                                Width
+                            </p>
+                        </div>
+
+                        <div class="details">
+                            <p>
+                                <span>90</span>
+                                cm
+                                <br>
+                                Height
+                            </p>
+                        </div>
+
+                        <div class="details">
+                            <p>
+                                <span>1.76</span>
+                                lbs
+                                <br>
+                                Weight
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <h5>Choose colour:</h5>
+            </div>
+
+            <input class="colour-btn" id="colour-1" name="colour-btn" type="radio" checked>
+            <label for="colour-1" id="label-colour-1"></label>
+
+            <input class="colour-btn" id="colour-2" name="colour-btn" type="radio">
+            <label for="colour-2" id="label-colour-2"></label>
+
+            <input class="colour-btn" id="colour-3" name="colour-btn" type="radio">
+            <label for="colour-3" id="label-colour-3"></label>
+
+            <input class="colour-btn" id="colour-4" name="colour-btn" type="radio">
+            <label for="colour-4" id="label-colour-4"></label>
+
+            <input class="colour-btn" id="colour-5" name="colour-btn" type="radio">
+            <label for="colour-5" id="label-colour-5"></label>
+            
+            <input class="colour-btn" id="colour-6" name="colour-btn" type="radio">
+            <label for="colour-6" id="label-colour-6"></label>
+
+            <div class="btn">
+                <button>Add to cart</button>
+            </div>
+
+            <div class="chair-image" id="chair1"></div>
+            <div class="chair-image" id="chair2"></div>
+            <div class="chair-image" id="chair3"></div>
+            <div class="chair-image" id="chair4"></div>
+            <div class="chair-image" id="chair5"></div>
+            <div class="chair-image" id="chair6"></div>
+
+            <div class="bg-colour" id="bg-1"></div>
+            <div class="bg-colour" id="bg-2"></div>
+            <div class="bg-colour" id="bg-3"></div>
+            <div class="bg-colour" id="bg-4"></div>
+            <div class="bg-colour" id="bg-5"></div>
+            <div class="bg-colour" id="bg-6"></div>
+        </div>
+    </div>
+</body>
+
+</html>
